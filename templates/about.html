@@ -1,19 +1,102 @@
 {% extends "base.html" %}
 
 {% block 'content' %}
-<section class="p-3" style="background-color: #EBF4FF;">
-    <h2>Nuestra Historia de Flan</h2>
-    <p>OnlyFlans es una empresa familiar dedicada a la elaboración y venta de los más deliciosos flanes caseros. Fundada en el año 1559 por Thom Yorke, nuestra pasión por crear postres de calidad y sabor excepcional nos ha llevado a convertirnos en un referente en el mercado.</p>
-    <p>Nos enorgullece ofrecer una amplia variedad de sabores, desde el clásico flan de vainilla hasta opciones más innovadoras como flan de chocolate, café, frutas tropicales, cochallullo y mucho más.</p>
-</section>
 
-<section class="p-3" style="background-color: #C3DAFE;">
-    <h2>Nuestra Misión</h2>
-    <p>En OnlyFlans, nuestra misión es deleitar a nuestros clientes con packs de flanes exquisitos y de alta calidad, elaborados con ingredientes frescos y naturales. Nos esforzamos por brindar una experiencia gastronómica única que satisfaga los paladares más exigentes.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
 
-<section class="p-3" style="background-color: #A3BFFA">
-    <h2>Nuestro Equipo</h2>
-    <p>Detrás de cada delicioso flan de OnlyFlans hay un equipo apasionado y comprometido con la excelencia. Nuestros chefs expertos se dedican a perfeccionar cada receta, mientras que nuestro equipo de atención al cliente trabaja arduamente para garantizar la satisfacción de cada cliente.</p>
-</section>
+<head>
+    <meta charset="utf-8">
+    <title>Tea House - Tea Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-6 text-end">
+                            <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="https://media.scoolinary.app/blog/images/2021/08/Joanna-Artieda-_IVI5106-1024x683.jpg" alt="">
+                            <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="https://media.scoolinary.app/blog/images/2021/08/Joanna-Artieda-_IVI5264-1024x683.jpg" alt="">
+                        </div>
+                        <div class="col-6">
+                            <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="https://blog.sosa.cat/wp-content/uploads/2023/05/Matin_Lippo_Flan_vegano_avellanas.png" alt="">
+                            <img class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="data:image/jpeg;base64,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" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="section-title">
+                        <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
+                        <h1 class="display-6">The success history of FLAN in 25 years</h1>
+                    </div>
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-4">
+                            <img class="img-fluid bg-white w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO4Wc2-Mqen1D75wAsbFYf6VgN9DN0H9VFaQe2OynnSTkQ7sObq7cPEqHdnzonSgfWu9c&usqp=CAU" alt="">
+                        </div>
+                        <div class="col-sm-8">
+                            <h5>Our FLAN is one of the most popular dessert in the world</h5>
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
+                        </div>
+                    </div>
+                    <div class="border-top mb-4"></div>
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            <h5>Daily use of a cup of tea is good for your health</h5>
+                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img class="img-fluid bg-white w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRJPFtK1IDgkGyp8IoOqNZhupAsbt0UQ9sOH6g7d8jsFkMOuMYl1vwMxVo_n02C5RtSJE&usqp=CAU" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
 {% endblock 'content' %}
