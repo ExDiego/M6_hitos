@@ -3,13 +3,15 @@
 {% block 'content' %}
 
 <section class="container mx-auto py-4">
-    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-3 g-3">
+    <div class="row row-cols-1 row-cols-md-1 row-cols-lg-4 g-4">
         {% for flan in flanes %}
         <div class="col">
             <div class="card h-100">
-                <img src="{{ flan.image }}" height="150px" class="card-img-top" alt="{{ flan.slug }}">
+                <a href="{% url 'flan_details' flan.id %}"><img src="{{ flan.image }}" height="150px" class="card-img-top" alt="{{ flan.slug }}"></a>
                 <div class="card-body">
+                    <a class="m-3" href="{% url 'flan_details' flan.id %}">
                     <h5 class="card-title">{{ flan.name }}</h5>
+                    </a>
                     <p class="card-text text-justify">
                         {% if flan.descripcion|length > 100 %}
                         {{ flan.descripcion|slice:":100" }}... <a href="">Leer más...</a>
@@ -18,12 +20,17 @@
                         {% endif %}
                     </p>
                 </div>
-                <div class="card-footer">
-                    <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <div class="m-3 text-center">
+                    <a href="{% url "Add" flan.id %}" class="btn btn-outline-dark">Agregar al carrito</a>
                 </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">Last updated 99k light years ago</small>
+                </div>
+                <p class="mx-3">Precio : $ {{flan.precio}}</p>
             </div>
         </div>
         {% endfor %}
+        
     </div>
 </section>
 {% endblock 'content' %}

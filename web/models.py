@@ -12,6 +12,7 @@ class Flan(models.Model):
     image = models.URLField()
     slug = models.SlugField(unique=True, max_length=255, blank=True)
     is_private = models.BooleanField(default=False)
+    precio = models.DecimalField(max_digits=10, decimal_places=2, default=500)
     
     
     
@@ -22,6 +23,19 @@ class Flan(models.Model):
     
     def __str__(self):
         return self.name
+    
+    # se convierte el cambio "precio" de Decimal a float antes de serializar a JSON, o me da error
+    
+    def to_jsonable(self): 
+        return {
+            "flan_uuid": str(self.flan_uuid),
+            "name": self.name,
+            "descripcion": self.descripcion,
+            "image": self.image,
+            "slug": self.slug,
+            "is_private": self.is_private,
+            "precio": float(self.precio), # se agrega float a self.precio
+        }
     
 
 

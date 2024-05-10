@@ -51,6 +51,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'welcome'
+LOGOUT_REDIRECT_URL = 'index'
+
 ROOT_URLCONF = "onlyflans.urls"
 
 TEMPLATES = [
@@ -64,6 +69,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "web.context_processor.total_carrito",
             ],
         },
     },
@@ -118,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'web', 'static'), # Variable que apunta al directorio base del project django. Necesario?
+#]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
