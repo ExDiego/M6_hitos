@@ -31,6 +31,9 @@
                 <p class="mx-3">Precio : $ {{flan.precio}}</p>
             </div>
         </div>
+        {% empty %}
+        <h4 class="text-center text-secondary" style="width: 100%;">ups! no tenemos lo que busca 😿</h4>
+        <h5 class="text-center" style="width: 100%;">Ya viste nuestro catálogo?<a class="text-info-emphasis" href="{% url 'index' %}">>>Click aquí<<</a></h5>
         {% endfor %}
         
     </div>

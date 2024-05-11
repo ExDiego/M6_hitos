@@ -4,6 +4,7 @@ from .forms import ContactForm
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.decorators import login_required
 from web.Carrito import Carrito
+from django.db.models import Q
 
 
 
@@ -84,3 +85,17 @@ def limpiar_carrito(request):
     carrito = Carrito(request)
     carrito.limpiar()
     return redirect("tienda")
+
+# BUSCADOR
+
+def buscar_flan(request):
+    criterio = request.GET.get("papita")
+    flanes = Flan.objects.all()
+    if not request.user.is_authenticated:
+        flanes = Flan.objects.filter(is_private = False)
+        
+    if criterio: 
+        flanes = flanes.filter(
+            Q(name__icontains=criterio)| Q(descripcion__icontains=criterio)
+        )
+    return render(request,'index.html',{"flanes":flanes})
